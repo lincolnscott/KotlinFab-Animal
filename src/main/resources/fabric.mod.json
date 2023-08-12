@@ -1,8 +1,8 @@
 {
 	"schemaVersion": 1,
-	"id": "modid",
+	"id": "stampede",
 	"version": "${version}",
-	"name": "Example mod",
+	"name": "Stampede",
 	"description": "This is an example description! Tell everyone what your mod is about!",
 	"authors": [
 		"Me!"
@@ -12,28 +12,35 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/modid/icon.png",
+	"icon": "assets/stampede/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.example.ExampleMod"
+			{
+				"value": "com.ljgram.ExampleMod",
+				"adapter": "kotlin"
+			}
 		],
 		"client": [
-			"com.example.ExampleModClient"
+			{
+				"value": "com.ljgram.ExampleModClient",
+				"adapter": "kotlin"
+			}
 		]
 	},
 	"mixins": [
-		"modid.mixins.json",
+		"stampede.mixins.json",
 		{
-			"config": "modid.client.mixins.json",
+			"config": "stampede.client.mixins.json",
 			"environment": "client"
 		}
 	],
 	"depends": {
-		"fabricloader": ">=0.14.21",
+		"fabricloader": ">=0.14.22",
 		"minecraft": "~1.20.1",
 		"java": ">=17",
-		"fabric-api": "*"
+		"fabric-api": "*",
+		"fabric-language-kotlin": ">=1.9.0"
 	},
 	"suggests": {
 		"another-mod": "*"
